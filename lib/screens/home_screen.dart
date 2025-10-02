@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pemrograman_mobile/screens/login_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -12,7 +13,11 @@ class HomeScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              // Handle logout
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => const LoginScreen()),
+                (route) => false,
+              );
             },
             icon: Icon(Icons.logout),
           ),
@@ -23,9 +28,7 @@ class HomeScreen extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
+              decoration: BoxDecoration(color: Colors.blue),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -72,7 +75,11 @@ class HomeScreen extends StatelessWidget {
               leading: Icon(Icons.logout),
               title: Text('Logout'),
               onTap: () {
-                // Handle logout
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
+                  (route) => false,
+                );
               },
             ),
           ],
@@ -100,7 +107,11 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   _buildDashboardCard('Profile', Icons.person, Colors.green),
                   _buildDashboardCard('Messages', Icons.message, Colors.orange),
-                  _buildDashboardCard('Settings', Icons.settings, Colors.purple),
+                  _buildDashboardCard(
+                    'Settings',
+                    Icons.settings,
+                    Colors.purple,
+                  ),
                   _buildDashboardCard('Help', Icons.help, Colors.red),
                 ],
               ),
@@ -115,9 +126,11 @@ class HomeScreen extends StatelessWidget {
     return Card(
       elevation: 4,
       child: InkWell(
-        onTap: () {
-          // Handle card tap
-        },
+        // onTap: onTap ?? () {
+        //     ScaffoldMessenger.of(context).showSnackBar(
+        //       SnackBar(content: Text('Fitur $title segera hadir!')),
+        //     );
+        //   },
         child: Container(
           padding: EdgeInsets.all(16),
           child: Column(
@@ -127,10 +140,7 @@ class HomeScreen extends StatelessWidget {
               SizedBox(height: 12),
               Text(
                 title,
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
             ],
           ),

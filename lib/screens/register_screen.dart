@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:pemrograman_mobile/screens/login_screen.dart';
+import 'home_screen.dart';
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
 
@@ -82,6 +83,9 @@ class RegisterScreen extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   // Handle register
+                  // need to add backend for saving data to database for real case -- David
+                  // for this case i only put pushReplacement Navigation
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const LoginScreen()),);
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
@@ -103,6 +107,7 @@ class RegisterScreen extends StatelessWidget {
                 TextButton(
                   onPressed: () {
                     // Navigate to login
+                    Navigator.pop(context);
                   },
                   child: Text('Login'),
                 ),
