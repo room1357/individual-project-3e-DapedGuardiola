@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pemrograman_mobile/screens/login_screen.dart';
-
+import 'profile_screen.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -60,7 +60,13 @@ class HomeScreen extends StatelessWidget {
               leading: Icon(Icons.person),
               title: Text('Profile'),
               onTap: () {
+                // TUTUP drawer sebelum navigasi
                 Navigator.pop(context);
+                // LAKUKAN navigasi ke ProfileScreen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ProfileScreen()),
+                );
               },
             ),
             ListTile(
