@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pemrograman_mobile/models/user.dart';
-import 'package:pemrograman_mobile/screens/home_screen.dart';
+import 'package:pemrograman_mobile/member_list_screen/home_screen.dart';
 import 'register_screen.dart';
 
 class LoginScreen extends StatefulWidget {

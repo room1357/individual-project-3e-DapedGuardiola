@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pemrograman_mobile/screens/login_screen.dart';
+import 'package:pemrograman_mobile/member_list_screen/login_screen.dart';
 import 'package:pemrograman_mobile/models/user.dart'; // ← tambahkan ini
 
 class RegisterScreen extends StatefulWidget {
